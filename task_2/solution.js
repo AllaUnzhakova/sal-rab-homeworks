@@ -7,9 +7,7 @@ function calcShipping(sum, min, shipping) {
     
     // создайте переменную shippingSum
     let shippingSum; // стоимость доставки по факту
-    min = 700;
-    shipping = 200;
-
+  
     // если productsSum равно 0,
     // то shippingSum присвоить значение 0
     
@@ -18,9 +16,9 @@ function calcShipping(sum, min, shipping) {
 
     // если productsSum больше 0 и меньше freeShippingMinSum,
     // то shippingSum присвоить значение shippingPrice
-    if ( productsSum >= freeShippingMinSum || productsSum ==0) {
+    if ( productsSum === 0 || productsSum >= freeShippingMinSum) {
         shippingSum = 0;
-      } else {shippingSum = shipping;
+      } else {shippingSum = shippingPrice;
     }
     // Конец решения задания №2.1.
 
@@ -35,11 +33,8 @@ function calcDiscount(sum, min, discount) {
     // Задание №2.2. Рассчитать скидку
     let discountSum; // величина скидки в рублях
 
-    min = 700;
-    discount = 10;
-
-    if(productsSum >= discountMinSum){
-        discountSum = (productsSum / discount);
+       if(productsSum >= discountMinSum){
+        discountSum = (productsSum * discount) / 100;
     }
     else {
         discountSum = 0;
